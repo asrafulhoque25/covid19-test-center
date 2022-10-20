@@ -1,0 +1,255 @@
+/**
+ * @Main scss for (Template/Project Name)
+ * @project     - Project Name
+ * @author      - 
+ * @created_by  - kawsar bin siraj
+ * @created_at  - 
+ * @modified_by -
+ */
+
+
+/* fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&display=swap');
+// font-family: 'Inter', sans-serif;
+/* fonts import -END */
+
+
+
+
+/* reset, root */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --mainColor: #F6E3BA;
+    --teal-clr: #007C82;
+    --dark-clr: #2B2B32;
+}
+
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1000px;
+    }
+}
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+
+/* reset, root - END */
+
+
+
+
+/* helper , base classes */
+.teal-clr {
+    color: var(--teal-clr);
+}
+
+.dark-clr {
+    color: var(--dark-clr);
+}
+
+.bg-teal-clr {
+    background-color: var(--teal-clr);
+}
+
+.is-radius {
+    border-radius: 20px;
+}
+
+/* helper , base classes  - END*/
+
+
+
+
+
+
+/* css for corona-test-center-search-panel */
+.corona-test-center-search-panel {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+
+    .give-your-info {
+        position: relative;
+        z-index: 100;
+        flex-direction: column;
+        min-height: 100vh;
+
+        @media (min-width: 768px) and (max-width: 991px) {
+            min-height: 70vh;
+        }
+
+        @media (min-width: 576px) and (max-width: 767px) {
+            min-height: 80vh;
+        }
+
+        @media (max-width: 575px) {
+            min-height: 80vh;
+        }
+
+        .title {
+            font-size: 58px;
+            line-height: 1.2;
+
+            @media (max-width: 1600px) {
+                font-size: calc(1vw + 32px);
+            }
+        }
+
+        .info-intro {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 30px;
+        }
+
+        .input-info {
+            form {
+                @media (min-width: 767px) {
+                    display: grid;
+                    grid-template-columns: 65% 1fr;
+                    grid-gap: 20px;
+                }
+            }
+
+            input {
+                height: 64px;
+
+                &:focus {
+                    box-shadow: none !important;
+                }
+
+                &::placeholder {
+                    color: #B4C1CE;
+                }
+
+                border: 2px solid #ADE0CE;
+            }
+        }
+
+        .search-btn {
+            max-width: 192px;
+            transition: all 0.3s linear;
+            border: 2px solid transparent;
+            box-shadow: none !important;
+
+            &:hover {
+                background-color: #fff;
+                color: var(--teal-clr) !important;
+                border-color: #ADE0CE;
+
+                svg * {
+                    stroke: var(--teal-clr) !important;
+                }
+            }
+        }
+
+        .form-check-input {
+            box-shadow: none !important;
+        }
+    }
+
+    .test-image {
+        z-index: 100;
+        position: relative;
+        text-align: center !important;
+    }
+
+    .shape-image {
+        z-index: 1;
+
+        .animate-img {
+            transition: all 0.3s linear;
+            animation-name: image-animation;
+            animation-duration: 25s;
+            animation-iteration-count: infinite;
+        }
+
+        .img-one {
+            position: absolute;
+            top: -5%;
+            left: -21%;
+        }
+
+        .img-two {
+            position: absolute;
+            top: -6%;
+            left: 5%;
+        }
+
+        .img-three {
+            position: absolute;
+            bottom: 35%;
+            left: 12%;
+        }
+
+        .img-four {
+            position: absolute;
+            bottom: 5%;
+            left: 1%;
+        }
+    }
+
+    @keyframes image-animation {
+        0% {
+            transform: rotate(0deg)
+        }
+        50% {
+            transform: rotate(180deg)
+        }
+        100% {
+            transform: rotate(0deg)
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .img-one {
+        top: 0 !important;
+        height: 350px;
+    }
+
+    .img-two {
+        top: 0 !important;
+        right: 0;
+        left: initial !important;
+    }
+
+    .img-three {
+        left: 5% !important;
+    }
+}
+
+/* css for corona-test-center-search-panel -END */
+
+
+
+
+
+
+
+
+
+/**
+ * @responsive files for (Template/Project Name)
+ * @created_by - 
+ * @modified_by -
+ */
+
+@use './responsive.scss';
